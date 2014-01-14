@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/llYaxisParent"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/llYaxis"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00C0C0C0"
+                android:gravity="bottom"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40px"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutlinearChart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/llYaxisParent" >
+
+            <com.example.custombarchart.GraphBackground
+                android:id="@+id/graphBackground1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.example.custombarchart.MyScrollView
+                android:id="@+id/horizontalScrollView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/graphBackground1" >
+
+                <LinearLayout
+                    android:id="@+id/llContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                                      
+                    <LinearLayout
+                        android:id="@+id/llCaptions"
+                        android:layout_width="match_parent"
+                        android:layout_height="40px"
+                        android:background="#00FF0000"
+                        android:layout_gravity="bottom"
+                        android:orientation="horizontal" >
+                    </LinearLayout>
+                </LinearLayout>
+            </com.example.custombarchart.MyScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/hsc"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40px"
+        android:layout_alignParentLeft="true"
+        android:fillViewport="true"
+        android:visibility="invisible" >
+
+        <LinearLayout
+            android:id="@+id/linearChart"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:gravity="bottom|left"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</RelativeLayout>

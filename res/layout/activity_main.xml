@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/layoutlinearChart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <com.example.custombarchart.GraphBackground
+            android:id="@+id/graphBackground1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.example.custombarchart.MyScrollView
+            android:id="@+id/horizontalScrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/graphBackground1" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <com.example.custombarchart.CustomZoomImgView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/alpha_transparent" />
+            </RelativeLayout>
+        </com.example.custombarchart.MyScrollView>
+    </RelativeLayout>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:id="@+id/hsc"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:fillViewport="true"
+        android:visibility="invisible" >
+
+        <LinearLayout
+            android:id="@+id/linearChart"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:gravity="bottom|left"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </HorizontalScrollView> 
+</RelativeLayout>
